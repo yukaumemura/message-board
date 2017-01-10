@@ -45,15 +45,3 @@
   <%= f.submit class: "btn btn-sm btn-primary" %>
 <% end %>
 
-
-<input type="text" name="message[body]" id="message_body" />
-  <input type="submit" name="commit" value="Create Message" />
-<h1>メッセージ一覧</h1>
-<% @messages.each do |message| %>
-  名前:<%= message.name %>
-  内容:<%= message.body %>
-  <br>
-<% end %>
-
-<%= form_for(@message) do |f| %>
-</form>

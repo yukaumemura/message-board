@@ -1,0 +1,8 @@
+.example table {
+border: 1px #000000 solid;
+width:500;
+}
+
+.example td {
+border: 1px #000000 solid;
+}

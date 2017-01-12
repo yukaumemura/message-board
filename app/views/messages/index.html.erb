@@ -13,10 +13,23 @@
 </div>
 
 <%= form_for(@message) do |f| %>
-  名前:
-  <%= f.text_field :name %>
-
-  内容:
-  <%= f.text_field :body %>
-  <%= f.submit class: "btn btn-sm btn-primary" %>
+　<div class="form-group">
+    <table class="table table-bordered">
+        <tr>
+            <th><label for="exampleInputEmail1">名前</label></th>
+            <td><%= f.text_field :name %></td>
+        </tr>
+        <tr>
+            <th><label for="exampleInputPassword1">内容</label></th>
+            <td><%= f.text_area :body, class: "form-control" %></td>
+        </tr>
+         <tr>
+            <th><div class="form-group">
+                <label for="exampleInputPassword1">メッセージを送信する</label>
+              </div>
+            </th>
+            <td><p class="bg-primary"><%= f.submit class: "btn btn-sm btn-primary" %></p></td>
+        </tr>
+    </table>
+　</div>
 <% end %>

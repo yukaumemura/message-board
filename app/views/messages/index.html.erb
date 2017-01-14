@@ -13,23 +13,16 @@
 </div>
 
 <%= form_for(@message) do |f| %>
-　<div class="form-group">
-    <table class="table table-bordered">
-        <tr>
-            <th><label for="exampleInputEmail1">名前</label></th>
-            <td><%= f.text_field :name %></td>
-        </tr>
-        <tr>
-            <th><label for="exampleInputPassword1">内容</label></th>
-            <td><%= f.text_area :body, class: "form-control" %></td>
-        </tr>
-         <tr>
-            <th><div class="form-group">
-                <label for="exampleInputPassword1">メッセージを送信する</label>
-              </div>
-            </th>
-            <td><p class="bg-primary"><%= f.submit class: "btn btn-sm btn-primary" %></p></td>
-        </tr>
-    </table>
-　</div>
+  <div class="form-group">
+    <label for="message_name">名前</label>
+    <%= f.text_field :name, class:"form-control", placeholder:"Jane Doe" %>
+  </div>
+  <div class="form-group">
+    <label for="mesasge_body">内容</label>
+    <%= f.text_area :body, class: "form-control", placeholder:"御内容をご入力ください" %>
+  </div>
+   <div class="col-sm-offset-2 col-sm-10">
+       <%= f.submit class: "btn btn-default" %>
+    </div>
+
 <% end %>

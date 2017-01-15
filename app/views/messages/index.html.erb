@@ -1,3 +1,5 @@
+　
+<h1>レッスン6：メッセージボード</h1>
 <div class="panel panel-default">
   <div class="panel-heading">
     メッセージ一覧
@@ -17,24 +19,37 @@
 
 <%= render 'form' %>
 
-<%= form_for(@message) do |f| %>
-  <% if @message.errors.present? %>
-    <div class="alert alert-danger">
-      <%= alert %>
-      <ul>
-        <% @message.errors.full_messages.each do |full_message| %>
-          <li>
-            <%= full_message %>
-          </li>
-        <% end %> 
-      </ul>
-    </div>
-  <% end %>
+<div class="panel panel-primary">
+  <div class="panel-heading">課題：新しいカラムの追加</div>
+  <div class="panel-body">製作条件</div>
+  <ul class="list-group">
+      <li class="list-group-item">メッセージボードアプリの投稿内容の入力部分をinputタグではなくtextareaタグにする</li>
+      <li class="list-group-item">下記内容を実装し、それをHeorkuにリリースして動く状態でGitHubにブランチ名「challenge2」を作成しHerokuのアプリのURLと一緒に提出する。</li>
+      <li class="list-group-item">１．Messageモデルの名前、内容の他に年齢(age)カラムを追加し 投稿・編集を行えるようにしなさい。<br>
+     ※ageカラムの追加するためのコマンドを用いる⇒rails g migration add_age_to_messages age:integer</li>
+      <li class="list-group-item">2.追加した年齢(age)に 0以上かつ150以下の数字 だけ受け付けるようにバリデーション設定</li>
+      <li class="list-group-item">3.表示に年齢も含めてください。</li>
+  </ul>
+</div>
 
-  名前:
-  <%= f.text_field :name %>
-
-  内容:
-  <%= f.text_field :body %>
-  <%= f.submit class: "btn btn-sm btn-primary" %>
-<% end %>
+<div class="panel panel-danger">
+  <div class="panel-heading">注意事項</div>
+  <div class="panel-body">要確認！！</div>
+  <ul class="list-group">
+      <li class="list-group-item">この課題に取り組む前に、masterブランチに前の課題のchallenge1ブランチの内容をマージし、下記の通りになっていること<br>
+      （投稿の入力部分）　×　inputタグ　⇒　○　textareaタグ</li>
+      <li class="list-group-item">masterブランチにchallenge1ブランチをマージして、そこからchallege2ブランチを作成するには、以下のコマンドを実行<br>
+      　git checkout master<br>
+      　git merge challenge1<br>
+      　git checkout -b challenge2</li>
+      <li class="list-group-item">１．Messageモデルの名前、内容の他に年齢(age)カラムを追加し 投稿・編集を行えるようにしなさい。<br>
+     ※ageカラムの追加するためのコマンドを用いる⇒rails g migration add_age_to_messages age:integer</li>
+      <li class="list-group-item"> Herokuにデプロイするソースはこの課題で作成するchallenge2 ブランチとしてください。<br>
+      ローカルリポジトリのchallenge2ブランチをリモートリポジトリ(Heroku)のmasterブランチにpushするコマンドを用います。<br>
+      $ git push heroku challenge2:master</li>
+      <li class="list-group-item">HTMLは機能を実現していればアレンジは自由</li>
+     <li class="list-group-item">課題提出後はmasterブランチに戻って作業を行う</li>
+      <li class="list-group-item">コードレビューで合格になった後に、challenge2ブランチをmasterブランチにマージ</li>
+      <li class="list-group-item">提出時の注意⇒提出フォームの項目にある「動作確認用URL」には「HerokuのURL」を記載</li>
+  </ul>
+</div>

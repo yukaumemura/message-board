@@ -12,12 +12,15 @@
         (<%= link_to "edit" , edit_message_path(message) %>
          <%= link_to "destroy" , message , method: :delete, data: { confirm: '削除してもよろしいですか？' } %>
         )
+        <%= message.age %>
       <br>
     <% end %>
   </div>
 </div>
 
 <%= render 'form' %>
+<p>Herokuの動作確認用URL</p>
+<a></a>
 
 <div class="panel panel-primary">
   <div class="panel-heading">課題：新しいカラムの追加</div>
